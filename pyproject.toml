@@ -1,0 +1,62 @@
+[build-system]
+requires = ["setuptools", "setuptools-scm"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "tno.quantum.optimization.qubo"
+description = "QUBO optimization"
+readme = "README.md"
+authors = [{ name = "TNO Quantum Code Lab", email = "tnoquantum@tno.nl" }]
+maintainers = [{ name = "TNO Quantum Code Lab", email = "tnoquantum@tno.nl" }]
+keywords = ["QUBO", "Quantum", "TNO", "Optimization"]
+license = { text = "Apache License, Version 2.0" }
+classifiers = [
+    "License :: OSI Approved :: Apache Software License",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Programming Language :: Python :: 3.13",
+    "Operating System :: OS Independent",
+    "Intended Audience :: Developers",
+    "Intended Audience :: Information Technology",
+    "Intended Audience :: Science/Research",
+    "Typing :: Typed",
+]
+urls = { Homepage = "https://github.com/TNO-Quantum/", Documentation = "https://tno-quantum.github.io/documentation/", Source = "https://github.com/TNO-Quantum/optimization.qubo" }
+dynamic = ["version"]
+requires-python = ">=3.9"
+dependencies = [
+    "tno.quantum.optimization.qubo.components~=1.0",
+    "tno.quantum.optimization.qubo.solvers~=1.0",
+    "tno.quantum.optimization.qubo.preprocessors~=1.0",
+    "tno.quantum.optimization.qubo.postprocessors~=1.0",
+]
+
+[project.optional-dependencies]
+dwave = ["tno.quantum.optimization.qubo.solvers[dwave]~=1.0"]
+qubovert = ["tno.quantum.optimization.qubo.solvers[qubovert]~=1.0"]
+qaoa = ["tno.quantum.optimization.qubo.solvers[qaoa]~=1.0"]
+# During development it is not recommended to use `pip install .[all]` as local changes
+# in the optionals are not reflected. Consider explicitly installing all dependencies via
+# `pip installl .[dwave,qubovert,qaoa]`.
+all = ["tno.quantum.optimization.qubo[dwave,qubovert,qaoa]"]
+tests = [
+    "pytest>=8.1.1",
+    "pytest-cov>=4.1.0",
+    "tomlkit",
+    "tno.quantum.optimization.qubo.components[tests]",
+    "tno.quantum.optimization.qubo.solvers[tests]",
+    "tno.quantum.optimization.qubo.preprocessors[tests]",
+    "tno.quantum.optimization.qubo.postprocessors[tests]",
+]
+
+[tool.setuptools]
+platforms = ["any"]
+
+[tool.setuptools.dynamic]
+version = { attr = "tno.quantum.optimization.qubo.__version__" }
+
+[tool.setuptools.package-data]
+"*" = ["py.typed"]

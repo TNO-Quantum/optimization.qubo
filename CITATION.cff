@@ -1,0 +1,22 @@
+cff-version: 1.2.0
+license: Apache-2.0
+message: If you use this software, please cite it using these metadata.
+authors:
+      - name: TNO Quantum
+        city: The Hague
+        country: NL
+        email: quantumcodelab@tno.nl
+        website: https://tno.nl
+type: software
+url: https://tno.nl
+contact:
+      - name: TNO Quantum
+        city: The Hague
+        country: NL
+        email: quantumcodelab@tno.nl
+        website: https://tno.nl
+repository-code: https://github.com/TNO-Quantum/optimization.qubo
+repository-artifact: https://pypi.org/project/tno.quantum.optimization.qubo
+title: TNO Quantum - Optimization - QUBO
+version: 1.0.0
+date-released: 2025-05-13
