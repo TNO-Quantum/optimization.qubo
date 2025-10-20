@@ -18,5 +18,5 @@ contact:
 repository-code: https://github.com/TNO-Quantum/optimization.qubo
 repository-artifact: https://pypi.org/project/tno.quantum.optimization.qubo
 title: TNO Quantum - Optimization - QUBO
-version: 1.0.0
-date-released: 2025-05-13
+version: 1.0.1
+date-released: 2025-10-20

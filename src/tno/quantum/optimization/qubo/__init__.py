@@ -10,10 +10,10 @@ The :py:mod:`~tno.quantum.optimization.qubo` package can be installed using pip:
 
 By default, the package is installed without external solver dependencies. You can
 specify which QUBO solvers you would like to install. Available options are
-``[dwave, qubovert, qaoa]``. Alternatively, you can install all solvers
-simultaneously using the ``[all]`` option::
+``[dwave, qubovert, dqo]``. Alternatively, you can install all solvers
+simultaneously using the ``'[all]'`` option::
 
-    pip install tno.quantum.optimization.qubo[all]
+    pip install tno.quantum.optimization.qubo'[all]'
 
 
 **Example**
@@ -34,22 +34,28 @@ and instantiate available solvers to solve this QUBO, as shown in the following 
 >>> from tno.quantum.optimization.qubo import SolverConfig
 >>> list(SolverConfig.supported_items())  # doctest: +NORMALIZE_WHITESPACE
 ['bf_solver',
- 'custom_solver',
- 'd_wave_clique_sampler_solver',
- 'd_wave_sampler_solver',
- 'exact_sampler_solver',
- 'kerberos_sampler_solver',
- 'leap_hybrid_solver',
- 'neighborhood_solver',
- 'pipeline_solver',
- 'qaoa_solver',
- 'rs_solver',
- 'random_sampler_solver',
- 'sa2_solver',
- 'simulated_annealing_solver',
- 'steepest_descent_solver',
- 'tabu_solver',
- 'tree_decomposition_solver']
+'custom_solver',
+'daqo_solver',
+'d_wave_clique_embedded_simulated_annealing_solver',
+'d_wave_clique_sampler_solver',
+'d_wave_embedded_simulated_annealing_solver',
+'d_wave_parallel_embedding_solver',
+'d_wave_sampler_solver',
+'d_wave_tiling_solver',
+'digital_adiabatic_quantum_optimization_solver',
+'exact_sampler_solver',
+'kerberos_sampler_solver',
+'leap_hybrid_solver',
+'neighborhood_solver',
+'pipeline_solver',
+'qaoa_solver',
+'rs_solver',
+'random_sampler_solver',
+'sa2_solver',
+'simulated_annealing_solver',
+'steepest_descent_solver',
+'tabu_solver',
+'tree_decomposition_solver']
 >>> solver = SolverConfig(name='bf_solver').get_instance()
 >>>
 >>> # Solve the QUBO
@@ -78,4 +84,4 @@ __all__: list[str] = [
     "SolverConfig",
 ]
 
-__version__ = "1.0.0"
+__version__ = "1.0.1"

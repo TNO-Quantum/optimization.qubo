@@ -13,7 +13,6 @@ license = { text = "Apache License, Version 2.0" }
 classifiers = [
     "License :: OSI Approved :: Apache Software License",
     "Programming Language :: Python :: 3",
-    "Programming Language :: Python :: 3.9",
     "Programming Language :: Python :: 3.10",
     "Programming Language :: Python :: 3.11",
     "Programming Language :: Python :: 3.12",
@@ -24,9 +23,9 @@ classifiers = [
     "Intended Audience :: Science/Research",
     "Typing :: Typed",
 ]
-urls = { Homepage = "https://github.com/TNO-Quantum/", Documentation = "https://tno-quantum.github.io/documentation/", Source = "https://github.com/TNO-Quantum/optimization.qubo" }
+urls = { Homepage = "https://github.com/TNO-Quantum/", Documentation = "https://github.com/TNO-Quantum/", Source = "https://ci.tno.nl/gitlab/quantum/quantum-applications/quantum-toolbox/microlibs/optimization/microlibs/qubo/qubo" }
 dynamic = ["version"]
-requires-python = ">=3.9"
+requires-python = ">=3.10"
 dependencies = [
     "tno.quantum.optimization.qubo.components~=1.0",
     "tno.quantum.optimization.qubo.solvers~=1.0",
@@ -37,11 +36,11 @@ dependencies = [
 [project.optional-dependencies]
 dwave = ["tno.quantum.optimization.qubo.solvers[dwave]~=1.0"]
 qubovert = ["tno.quantum.optimization.qubo.solvers[qubovert]~=1.0"]
-qaoa = ["tno.quantum.optimization.qubo.solvers[qaoa]~=1.0"]
+dqo = ["tno.quantum.optimization.qubo.solvers[dqo]~=1.0"]
 # During development it is not recommended to use `pip install .[all]` as local changes
 # in the optionals are not reflected. Consider explicitly installing all dependencies via
-# `pip installl .[dwave,qubovert,qaoa]`.
-all = ["tno.quantum.optimization.qubo[dwave,qubovert,qaoa]"]
+# `pip installl .[dwave,qubovert,dqo]`.
+all = ["tno.quantum.optimization.qubo[dwave,qubovert,dqo]"]
 tests = [
     "pytest>=8.1.1",
     "pytest-cov>=4.1.0",
@@ -51,6 +50,7 @@ tests = [
     "tno.quantum.optimization.qubo.preprocessors[tests]",
     "tno.quantum.optimization.qubo.postprocessors[tests]",
 ]
+dev = ["tno-dev-utils[default]>=3.3"]
 
 [tool.setuptools]
 platforms = ["any"]
