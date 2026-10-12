@@ -1,3 +1,9 @@
+# 1.0.4 (2026 - 10 - 12)
+
+Drop support for `python3.10` 
+
+* Support `tno.quantum.optimization.qubo.solvers~=2.0.0`
+
 # 1.0.1 (2025 - 10 - 20)
 
 Drop support for `python3.9`

@@ -11,32 +11,32 @@ maintainers = [{ name = "TNO Quantum Code Lab", email = "tnoquantum@tno.nl" }]
 keywords = ["QUBO", "Quantum", "TNO", "Optimization"]
 license = { text = "Apache License, Version 2.0" }
 classifiers = [
-    "License :: OSI Approved :: Apache Software License",
-    "Programming Language :: Python :: 3",
-    "Programming Language :: Python :: 3.10",
-    "Programming Language :: Python :: 3.11",
-    "Programming Language :: Python :: 3.12",
-    "Programming Language :: Python :: 3.13",
-    "Operating System :: OS Independent",
-    "Intended Audience :: Developers",
-    "Intended Audience :: Information Technology",
-    "Intended Audience :: Science/Research",
-    "Typing :: Typed",
+    'Intended Audience :: Developers',
+    'Intended Audience :: Information Technology',
+    'Intended Audience :: Science/Research',
+    'License :: OSI Approved :: Apache Software License',
+    'Operating System :: OS Independent',
+    'Programming Language :: Python :: 3',
+    'Programming Language :: Python :: 3.11',
+    'Programming Language :: Python :: 3.12',
+    'Programming Language :: Python :: 3.13',
+    'Programming Language :: Python :: 3.14',
+    'Typing :: Typed',
 ]
 urls = { Homepage = "https://github.com/TNO-Quantum/", Documentation = "https://github.com/TNO-Quantum/", Source = "https://ci.tno.nl/gitlab/quantum/quantum-applications/quantum-toolbox/microlibs/optimization/microlibs/qubo/qubo" }
 dynamic = ["version"]
-requires-python = ">=3.10"
+requires-python = ">=3.11"
 dependencies = [
     "tno.quantum.optimization.qubo.components~=1.0",
-    "tno.quantum.optimization.qubo.solvers~=1.0",
+    "tno.quantum.optimization.qubo.solvers~=2.0",
     "tno.quantum.optimization.qubo.preprocessors~=1.0",
     "tno.quantum.optimization.qubo.postprocessors~=1.0",
 ]
 
 [project.optional-dependencies]
-dwave = ["tno.quantum.optimization.qubo.solvers[dwave]~=1.0"]
-qubovert = ["tno.quantum.optimization.qubo.solvers[qubovert]~=1.0"]
-dqo = ["tno.quantum.optimization.qubo.solvers[dqo]~=1.0"]
+dwave = ["tno.quantum.optimization.qubo.solvers[dwave]~=2.0"]
+qubovert = ["tno.quantum.optimization.qubo.solvers[qubovert]~=2.0"]
+dqo = ["tno.quantum.optimization.qubo.solvers[dqo]~=2.0"]
 # During development it is not recommended to use `pip install .[all]` as local changes
 # in the optionals are not reflected. Consider explicitly installing all dependencies via
 # `pip installl .[dwave,qubovert,dqo]`.

@@ -36,6 +36,7 @@ and instantiate available solvers to solve this QUBO, as shown in the following 
 ['bf_solver',
 'custom_solver',
 'daqo_solver',
+'dcqo_solver',
 'd_wave_clique_embedded_simulated_annealing_solver',
 'd_wave_clique_sampler_solver',
 'd_wave_embedded_simulated_annealing_solver',
@@ -43,6 +44,7 @@ and instantiate available solvers to solve this QUBO, as shown in the following 
 'd_wave_sampler_solver',
 'd_wave_tiling_solver',
 'digital_adiabatic_quantum_optimization_solver',
+'digital_counterdiabatic_quantum_optimization_solver',
 'exact_sampler_solver',
 'kerberos_sampler_solver',
 'leap_hybrid_solver',
@@ -84,4 +86,4 @@ __all__: list[str] = [
     "SolverConfig",
 ]
 
-__version__ = "1.0.1"
+__version__ = "1.0.4"
